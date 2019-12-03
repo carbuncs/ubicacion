@@ -614,7 +614,7 @@
                 masterTimer.postMessage("stop");
                 masterTimer.terminate();
             }
-            masterTimer = undefined; // liberar memoria
+            masterTimer = undefined; // liberar me
         }
         function startMasterTimer() {
             masterTimer = new Worker("js/background-timer.js");
@@ -664,7 +664,7 @@
 <script>
 
     /**
-     * For testing if basic geolocation functionality is working
+     * prueba de consola 
      */
 
     getLocation();
@@ -681,6 +681,7 @@
         console.log( "Latitude: " + position.coords.latitude +
                 ", Longitude: " + position.coords.longitude  +
                 ", Accuracy " + position.coords.accuracy);
+        console.log("tiempo"+ lapsedTime)        
     }
 </script>
 
