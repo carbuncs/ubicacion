@@ -62,7 +62,7 @@
 <body>
  <!-- texto inicial -->
         <p class="text-center">Hola, somos la plataforma de mediación de accidentes de tránsito, Necesitamos tu ubicacíon en tiempo real, 
-            El primer paso es verificar el mapa para poder brindarte todos los servicos que podés necesitar:</p>
+            El primer paso es verificar el mapa para  brindarte todos los servicios que podés necesitar de nuestra plataforma:</p>
             <style>body {
                     font-family: Arial, Helvetica, Sans-serif;
                     color: white;
@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <p class="text-left">Esta funcion esta habilitada:Centrar,Detener,Refrescar,Tiempo </p>
+    <p class="text-left">Esta función te permite : Centrar, Detener, Refrescar, Tiempo </p>
             <style>body {
                     font-family: Arial, Helvetica, Sans-serif;
                     color: white;
@@ -121,7 +121,7 @@
     </div>
 
 
-    <p class="text-left">Los siguientes casillas te permiten:  Centrar , Mostrar tu zona , Mostrar recorridos , Confirmar la ubicación. Nota: (Podés presionar el boton rojo: Detener para verficar de lejos el mapa)  </p>
+    <p class="text-left">Las siguientes casillas te permiten:  Centrar , Mostrar tu zona , Mostrar recorridos , Confirmar la ubicación. Nota: (Podés presionar el boton rojo: Detener para verficar de lejos el mapa)  </p>
             <style>body {
                     font-family: Arial, Helvetica, Sans-serif;
                     color: white;
@@ -177,7 +177,7 @@
         </div>
     </div>
 
-    <p class="text-left">La siguiente información nos permite saber con la maxima presición si podemos enviar un Drone de respuesta rapida, de lo contrario un agente estará con vos en muy poco tiempo, por favor ir hasta el final y completar el proceso de solicitud. </p>
+    <p class="text-left">La siguiente información nos permite saber con  maxima presición si un Drone UAVS puede llegar al evento, de lo contrario un agente estará con vos en muy poco tiempo, por favor ir hasta el final y completar el proceso de solicitud. </p>
             <style>body {
                     font-family: Arial, Helvetica, Sans-serif;
                     color: white;
@@ -216,13 +216,13 @@
             <div class="row">
                 <ul class="list-group col-md-6">
                     <li id="lat-lon"  class="list-group-item list-group-item-info">Lat: 0.0, Lon: 0.0</li>
-                    <li id="accuracy" class="list-group-item list-group-item-info">Accuracy: 0.0</li>
-                    <li id="time-diff" class="list-group-item list-group-item-info">Time since last update: 0</li>
+                    <li id="accuracy" class="list-group-item list-group-item-info">DRONE DJI: 0.0</li>
+                    <li id="time-diff" class="list-group-item list-group-item-info">TiEMPO DE LLEGADA: 0</li>
                 </ul>
                 <ul class="list-group col-md-6">
-                    <li id="heading" class="list-group-item list-group-item-success">Heading: 0</li>
-                    <li id="altitude" class="list-group-item list-group-item-success">Altitude: 0</li>
-                    <li id="speed" class="list-group-item list-group-item-success">Speed: 0</li>
+                    <li id="heading" class="list-group-item list-group-item-success">Titulo modo: 0</li>
+                    <li id="altitude" class="list-group-item list-group-item-success">Altitud: 0</li>
+                    <li id="speed" class="list-group-item list-group-item-success">Velocidad: 0</li>
                 </ul>
             </div>
         </div>
@@ -272,7 +272,7 @@
         var _greenCircleSymbol = null, _redCircleSymbol = null, _yellowCircleSymbol = null, _smallCircleSymbol = null, _lastCircle = null;
         var finalMarkerSymbol = null;
         var finalCircleSymbol = null;
-        // User controls
+        // control de usuario
         var drawCircle = true;
         var drawAllPoints = false;
         var useActualLatLon = false;
@@ -289,7 +289,7 @@
         var avgLatLonDiv = document.getElementById("avg-lat-lon");
         var elapsedTimeDiv = document.getElementById("elapsed-time");
         var progressBar = document.getElementById("progress-bar-main");
-        // Button bar
+        // Boton de barra
         var choose15Btn = document.getElementById("btn-choose-15");
         choose15Btn.addEventListener("click",handleChooserBtn);
         var choose25Btn = document.getElementById("btn-choose-25");
@@ -304,7 +304,7 @@
         var showAllPtsCheckBox = document.getElementById("show-all-pts");
         var showAvgCenterCheckBox = document.getElementById("average-center");
         var geolocationHelper = new GeolocationHelper(null /* no filters */);
-        // We want to start the geolocation as early as possible in the application.
+        // yo quiero que vuele la ubicacion
         startGeo();
         require([
             "esri/map",
@@ -319,11 +319,11 @@
                 function(Map,PictureMarkerSymbol,SimpleMarkerSymbol,SimpleLineSymbol,Graphic,Point,Color,Circle,SimpleFillSymbol,BootstrapMap) {
                     map = BootstrapMap.create("mapDiv",{
                         basemap: "streets-night-vector",
-                        center: [-122.45, 37.75], // longitude, latitude
+                        center: [-122.45, 37.75], // longitud, latitud
                         zoom: 5
                     });
-                    // If we have geolocation information ready the instant the map loads
-                    // let's go ahead and drop a location marker on the map.
+                    // si nosotros tenemos localizcion
+                    // vamonos
                     map.on("load",function(){
                         if(missMapDraw){
                             drawLocationMarker(positionObject.lat,positionObject.lon,positionObject.accuracy);
@@ -463,7 +463,7 @@
                                         radius: med_accuracy,
                                         geodesic: true
                                     });
-                                    _lastCircle._tempType = "circle"; // so we can identify it on the graphicsLayer.
+                                    _lastCircle._tempType = "circle"; // podemos identificar
                                     map.graphics.add(new Graphic(_lastCircle, finalCircleSymbol));
                                 }
                                 if(drawAllPoints){
@@ -475,7 +475,7 @@
                                 }
                                 map.graphics.add(new Graphic(geometry, finalMarkerSymbol));
                                 map.setExtent(_lastCircle.getExtent());
-//                                map.centerAndZoom(geometry, _zoomStop);
+                                map.centerAndZoom(geometry, _zoomStop);
                             }
                         }
                 )
