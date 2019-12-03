@@ -609,12 +609,12 @@
             startMasterTimer();
         }
         function stopTimers(){
-            // Try multiple ways to kill the web worker
+            // intentar contruir una mejor ruta 
             if(masterTimer) {
                 masterTimer.postMessage("stop");
                 masterTimer.terminate();
             }
-            masterTimer = undefined; // Free up memory if not in use
+            masterTimer = undefined; // liberar memoria
         }
         function startMasterTimer() {
             masterTimer = new Worker("js/background-timer.js");
