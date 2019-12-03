@@ -67,7 +67,7 @@
                     font-family: Arial, Helvetica, Sans-serif;
                     color: white;
                     background-color: rgb(15, 15, 15);
-                    font-size: 22px;
+                    font-size: 18px;
                   }
                   
                   .contenido{
@@ -203,7 +203,7 @@
         // capture a single location.
         //
         var _watchID = null;
-        var _zoomStop = 17;
+        var _zoomStop = 22;
         var __currentTime = null;
         var startDate = new Date();
         var accuracyArray = [];
@@ -261,7 +261,7 @@
             "dojo/domReady!"],
                 function(Map,PictureMarkerSymbol,SimpleMarkerSymbol,SimpleLineSymbol,Graphic,Point,Color,Circle,SimpleFillSymbol,BootstrapMap) {
                     map = BootstrapMap.create("mapDiv",{
-                        basemap: "delorme",
+                        basemap: "streets-night-vector",
                         center: [-122.45, 37.75], // longitude, latitude
                         zoom: 11
                     });
