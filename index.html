@@ -29,7 +29,7 @@
 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <title>GPS CARBUNCS</title>
+    <title>GPS CARBUNCS APP</title>
 
     <link rel="stylesheet" href="https://js.arcgis.com/3.26/esri/css/esri.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" >
@@ -61,7 +61,7 @@
 </head>
 <body>
  <!-- texto inicial -->
-        <p class="text-center">Hola, somos la plataforma de mediación de accientes, esta es tu Ubicacíon en tiempo real, 
+        <p class="text-center">Hola, somos la plataforma de mediación de accidentes de Tránsito, esta es tu Ubicacíon en tiempo real, 
             El primer paso es verificar tu Ubicacíon en el mapa para poder brindarte todos los servicos:</p>
             <style>body {
                     font-family: Arial, Helvetica, Sans-serif;
@@ -84,16 +84,16 @@
 
        
   
-    <div class="panel panel-default">
+    <div class="panel panel-center">
         <div class="panel-body">
-            <div class="row">
+            <div class="center">
                 <div class="col-md-12">
                     <button id="start-geo-btn" type="button" class="btn btn-default" onclick="startGeo()"><span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span></button>
                     <button type="button" class="btn btn-danger" onclick="stopAll()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></button>
                     <button type="button" class="btn btn-warning" onclick="reset()"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
                     <button class="btn btn-primary" type="button">
                         <span class="glyphicon glyphicon-time" aria-hidden="true">
-                            <span id="elapsed-time" class="badge">00:00:00</span>
+                            <span id="elapsed-time" class="badge">CR Iniciando 00:00:00</span>
                         </span>
                     </button>
                 </div>
@@ -261,7 +261,7 @@
             "dojo/domReady!"],
                 function(Map,PictureMarkerSymbol,SimpleMarkerSymbol,SimpleLineSymbol,Graphic,Point,Color,Circle,SimpleFillSymbol,BootstrapMap) {
                     map = BootstrapMap.create("mapDiv",{
-                        basemap: "topo",
+                        basemap: "Bing maps aerial",
                         center: [-122.45, 37.75], // longitude, latitude
                         zoom: 11
                     });
