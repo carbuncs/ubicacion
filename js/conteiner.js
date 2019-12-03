@@ -2,6 +2,6 @@ $('.botonF1').hover(function(){
   $('.btn').addClass('animacionVer');
   
 })
-$('.contenedor').mouseleave(function(){
+$('.conteiner').mouseleave(function(){
   $('.btn').removeClass('animacionVer');
 })
