@@ -261,9 +261,9 @@
             "dojo/domReady!"],
                 function(Map,PictureMarkerSymbol,SimpleMarkerSymbol,SimpleLineSymbol,Graphic,Point,Color,Circle,SimpleFillSymbol,BootstrapMap) {
                     map = BootstrapMap.create("mapDiv",{
-                        basemap: "topo",
+                        basemap: "streets-night-vector",
                         center: [-122.45, 37.75], // longitude, latitude
-                        zoom: 20
+                        zoom: 30
                     });
                     // If we have geolocation information ready the instant the map loads
                     // let's go ahead and drop a location marker on the map.
