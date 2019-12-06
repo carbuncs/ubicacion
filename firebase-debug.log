@@ -36,3 +36,6 @@ INFO: Detected non-HTTP/2 connection.
 [debug] [2019-12-05T04:06:08.648Z] Dec 04, 2019 10:06:08 PM io.gapi.emulators.netty.NotFoundHandler handleRequest
 INFO: Unknown request URI: /favicon.ico
 
+[debug] [2019-12-05T04:16:56.851Z] Dec 04, 2019 10:16:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+

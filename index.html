@@ -72,6 +72,18 @@
     </style>
 </head>
 <body>
+
+    <!---abrir js ubicacion-->
+
+    <script src="ubicacion.js"></script>
+
+
+
+
+
+
+
+
  <!-- texto inicial -->
         <p class="text-center">Hola, somos la plataforma de mediación de accidentes de tránsito, Necesitamos tu ubicación en tiempo real, 
             El primer paso es verificar el mapa para  brindarte todos los servicios que podés necesitar de nuestra plataforma:</p>
@@ -251,6 +263,10 @@
             </div>
         </div>
     </div>
+
+  <input id="pass" type ="contrasena" placeholder="Su POSICION SATELITAL">
+  <button onclick="showPosition()">GPS</button>
+  <input id="data" type ="contrasena" placeholder='se muestra su cordenadas'>
 
     <script>
         var locationPath = location.pathname.replace(/\/[^/]+$/, "");
@@ -694,7 +710,9 @@
                 ", Longitude: " + position.coords.longitude  +
                 ", Accuracy " + position.coords.accuracy);
         console.log(position)       
-        
+        var contrasena = document.getElementById('pass').value;
+        var Datos = document.getElementById('data').value;
+        console.log(datos)
                  
     }
 </script>
