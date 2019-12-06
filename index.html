@@ -362,7 +362,7 @@
                         _zoomStop = evt.level;
                     });
                     (function() {
-                        // Create the marker symbol
+                        // Crear una marca
                         _greenMarkerSymbol = new PictureMarkerSymbol({
                             "angle":0,
                             "xoffset":0,
@@ -465,10 +465,10 @@
                     "esri/geometry/Circle",
                     "esri/geometry/Point"],
                         function(Graphic,Circle,Point){
-                            // We only want one symbol
+                            // Nosotros tenermos un simbolo
                             map.graphics.clear();
                             var geometry = new Point(lon,lat);
-                            // Have to wait for map to initialize
+                            // tenemos que esperar el mapa
                             if(map != null){
                                 if(med_accuracy <= 10){
                                     finalMarkerSymbol = _greenMarkerSymbol;
@@ -709,11 +709,12 @@
         console.log( "Latitude: " + position.coords.latitude +
                 ", Longitude: " + position.coords.longitude  +
                 ", Accuracy " + position.coords.accuracy);
-        console.log(position)       
+        //console.log(position)       
         var contrasena = document.getElementById('pass').value;
         var Datos = document.getElementById('data').value;
         console.log("Wylky Cracks")
-        console.log(Datos)
+        //console.log(Datos)
+        console.log(avgLatLonDiv.innerHTML)
                  
     }
 </script>
