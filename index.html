@@ -76,8 +76,28 @@
     <!---abrir js ubicacion-->
 
     <script src="ubicacion.js"></script>
+    <script src="test.html"></script>
+
+<!---->
+
+<h2>Modo de Prueba de Carbuncs Costa Rica</h2>
 
 
+<button onclick="myFunction()">Empezar</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var txt;
+  if (confirm("Estás de acuerdo en empezar el modo de prueba")) {
+    txt = "Empezaremos en modo de prueba!";
+  } else {
+    txt = "Presionaste Cancelar!";
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
 
 
 
@@ -267,6 +287,7 @@
   <input id="pass" type ="contrasena" placeholder="Su POSICION SATELITAL">
   <button onclick="showPosition()">GPS</button>
   <input id="data" type ="contrasena" placeholder='se muestra su cordenadas'>
+  <button onclick="src='test.html'">abrir resultados</button>
 
     <script>
         var locationPath = location.pathname.replace(/\/[^/]+$/, "");
