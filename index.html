@@ -2,17 +2,15 @@
 <html>
 <!--
 // Author: wolfking
-//
 //carbuncs
 //ley de propiedad intelectual
 //registro de ip en modo Inspeccionar codigo fuente
 //todos los derechos reservados 
 //wylky Ramirez Nuñez
+//los dato son cuidados
 -->
 <head lang="en">
 <header>
-
-       
 
 <!--
 // Author: wolfking
@@ -30,15 +28,7 @@
 
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
-
-
-
-
-
-
-
-
-
+<!---->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>GPS CARBUNCS APP</title>
@@ -73,22 +63,51 @@
 </head>
 <body>
 
+
+        <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              xfbml            : true,
+              version          : 'v5.0'
+            });
+          };
+  
+          (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/es_ES/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+  
+        <!-- Your customer chat code -->
+        <div class="fb-customerchat"
+          attribution=setup_tool
+          page_id="151483612138903"
+    theme_color="#fa3c4c"
+    logged_in_greeting="¡Hola 👋!  Soy el asistente de Inteligencia Artificial de Carbuncs👮‍♂  ¿Te ayudo?"
+    logged_out_greeting="Empecemos">
+        </div>
+  
+                      
+  
+                      
+                    </script>
+  
+                    <!---chatbot-->
+
     <!---abrir js ubicacion-->
 
     <script src="ubicacion.js"></script>
     <script src="test.html"></script>
 
-<!---->
+<!-- pantalla de demostracion-->
 
 <h2>Modo de Prueba de Carbuncs Costa Rica</h2>
-
-
 <button onclick="myFunction()">Empezar</button>
-
 <p id="demo"></p>
-
-<script>
-function myFunction() {
+<script>function myFunction() {//cuando se da el boton empezar 
   var txt;
   if (confirm("Estás de acuerdo en empezar el modo de prueba")) {
     txt = "Empezaremos en modo de prueba!";
@@ -99,7 +118,7 @@ function myFunction() {
 }
 </script>
 
-
+<!---->
 
 
 
@@ -112,22 +131,12 @@ function myFunction() {
                     color: white;
                     background-color: rgb(15, 15, 15);
                     font-size: 12px;
-                  }
-                  
+                  }                  
                   .contenido{
                     font-size: 80%;
                   }
             
-            </style>
-
-
-  
-
-
-
-
-       
-  
+            </style>  
     <div class="panel panel-center">
         <div class="panel-body">
             <div class="center">
