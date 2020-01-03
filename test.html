@@ -1,54 +1,159 @@
-<!DOCTYPE html>
+<!DOCTYPE html:5>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Geolocation Test</title>
-</head>
-<body>
-<script>
+  <head>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boleta Carbuncs:</title>
 
-    /**
-    * Pruebas
-     */
+    <script type="text/javascript"></script>
+    <meta charset="UTF-8" />
+    <title>Geolocazación Test</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script href="/index.css"></script>
+  </head>
 
-    getLocation();
+  <body>
+    <link href="/index.css" rel="stylesheet" type="text/css" />
+    <script>
+      alert(
+        "Bienvenidos, tu ubicación está siendo registrada, una vez terminado el proceso el servicio GPS se reinicirá"
+      );
 
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
+      var email = "";
+
+      function enviarser() {
+        var age = prompt("¿Cuál es tu dirección de correo electrónico ?");
+        alert("El correo de User es " + age);
+        if (age == "carbuncsgocr@gmail.com") {
+          console.log("Hola Maestro");
         } else {
-            console.log( "Geolocation is not supported by this browser." );
+          console.log("Hola Usuario");
+          email = age;
+          console.log("correo es", email);
         }
-    }
-    function showPosition(position) {
-        console.log("Location object received");
-        console.log( "Latitude: " + position.coords.latitude +
-                ", Longitude: " + position.coords.longitude  +
-                ", Accuracy " + position.coords.accuracy);
-    }
-</script>
-<script>
+      }
 
-    /**
-     * For testing if basic geolocation functionality is working
-     */
+      enviarser();
+      //dot notation
+      let d = new Date();
+      document.body.innerHTML =
+        "<h1>La hora en reportar el accidente es:  " +
+        d.getHours() +
+        ":" +
+        d.getMinutes() +
+        ":" +
+        d.getSeconds();
+      ("</h1>");
 
-    getLocation();
+      console.log("La hora: ", d);
+    </script>
 
-    function getLocation() {
+    <h1>Copiar el siguiente link y abirlo en cualquier navegador web</h1>
+
+    <script>
+      /**
+       * Pruebas
+       */
+      var tuNumero = "50685134128";
+      var tuMensaje =
+        "La%20Ubicación%20de%20mi%20accidente%20de%20tránsito%20es:%20";
+      var plus = ",+";
+      var sumarweb = ", ";
+      var addtext = "&text=%20";
+      var espacio = "%20";
+      var textocorreom = "%20mi%20dirección%20de%correo%20electrónico%20es:";
+      var texcedula = "%20mi%20número%20de%20cédula%o%20pasaporte%20es";
+      var texvehiculo = "%20La%20placa%de%20mi%20vehículo%20es:";
+      //var message = message.split(" ").join("%20");
+      var head = "https://api.whatsapp.com/send?phone=";
+
+      function getLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
+          navigator.geolocation.getCurrentPosition(showPosition);
         } else {
-            console.log( "Geolocation is not supported by this browser." );
+          console.log("Geolocation is not supported by this browser.");
         }
-    }
-    function showPosition(position) {
+      }
+      function showPosition(position) {
         console.log("Location object received");
-        console.log( "Latitude: " + position.coords.latitude +
-                ", Longitude: " + position.coords.longitude  +
-                ", Accuracy " + position.coords.accuracy);
-    }
-</script>
+        console.log(
+          "Latitude: " +
+            position.coords.latitude +
+            ", Longitude: " +
+            position.coords.longitude +
+            ", Accuracy " +
+            position.coords.accuracy
+        );
+        var ubicaion =
+          position.coords.latitude + sumarweb + position.coords.longitude;
 
-</body>
+        document.getElementById("resultado2").innerHTML = ubicaion;
+
+        console.log("La Ubicación del cliente es:", ubicaion);
+        console.log(
+          head +
+            tuNumero +
+            addtext +
+            tuMensaje +
+            position.coords.latitude +
+            plus +
+            position.coords.longitude
+        );
+
+        var Textocompletow =
+          head +
+          tuNumero +
+          addtext +
+          tuMensaje +
+          position.coords.latitude +
+          plus +
+          position.coords.longitude +
+          espacio +
+          textocorreom +
+          email +
+          texcedula;
+
+        console.log("el texto de whaas", Textocompletow);
+
+        //
+
+        document.getElementById("resultado").innerHTML = Textocompletow;
+        document.getElementsByName("resultado").value = Textocompletow;
+
+        //document.body.innerHTML =
+        //"<h1>el mensaje a enviar es :  " + Textocompletow;
+        //("</h1>");
+
+        //document.getElementById("resultado3").href = Textocompletow;
+      }
+
+      getLocation();
+    </script>
+
+    <div id="resultado" class="text-success"></div>
+
+    <h1>Copiar los siguientes numeros y abrir con cualquier app de mapas</h1>
+    <div></div>
+
+    <div id="resultado2"></div>
+    <h1>Tú correo es:</h1>
+    <div id="correo"></div>
+
+    <button type="button" onclick="getLocation()">Ejecutar de nuevo</button>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+      function myFunction() {
+        var x = document.createElement("href");
+        var t = document.createTextNode("resultado");
+        x.appendChild(t);
+        document.body.appendChild(x);
+      }
+    </script>
+  </body>
 </html>
